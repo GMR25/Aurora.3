@@ -5,8 +5,9 @@
 	var/use_He_is =  "You are"
 	var/use_He_has = "You have"
 	if(istype(machine) || viewer != src)
-		use_He_is =  "[get_pronoun("He")] [get_pronoun("is")]"
-		use_He_has = "[get_pronoun("He")] [get_pronoun("has")]"
+		var/datum/gender/G = gender_datums[gender]
+		use_He_is =  "[G.He] [G.is]"
+		use_He_has = "[G.He] [G.has]"
 
 	var/list/dat = list()
 
